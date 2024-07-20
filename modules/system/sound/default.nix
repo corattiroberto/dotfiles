@@ -12,6 +12,10 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
+    environment.systemPackages = lib.mkAfter [
+      pkgs.pulseaudio
+    ];
+
     sound.enable = true;
     hardware.pulseaudio.enable = false;
     security.rtkit.enable = true;

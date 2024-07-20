@@ -14,7 +14,7 @@ in {
     home.packages = with pkgs; [
       eza
       fastfetch
-      gnome.nautilus
+      nautilus
       brave
       vesktop
       obsidian

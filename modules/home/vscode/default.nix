@@ -9,7 +9,6 @@
 in {
   options.modules.vscode = {
     enable = lib.mkEnableOption "Enable vscode";
-    # options
   };
 
   config = lib.mkIf cfg.enable {
@@ -37,6 +36,11 @@ in {
 
         "git.decorations.enabled" = true;
       };
+
+      extensions = with pkgs.vscode-extensions; [
+        pkief.material-icon-theme
+        bbenoist.nix
+      ];
     };
   };
 }

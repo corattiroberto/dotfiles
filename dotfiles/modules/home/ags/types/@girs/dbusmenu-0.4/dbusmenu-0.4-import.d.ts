@@ -1,0 +1,1 @@
+/nix/store/mbrb8pbxkpla3f8f90v43zbqsa2803kf-home-manager-files/dotfiles/modules/home/ags/types/@girs/dbusmenu-0.4/dbusmenu-0.4-import.d.ts

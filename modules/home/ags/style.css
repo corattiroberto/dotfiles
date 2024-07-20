@@ -1,0 +1,171 @@
+@import url("palette.css");
+@import url("../gtk-3.0/gtk.css");
+
+scale trough {
+  min-height: 12px;
+}
+
+scale slider {
+  all: unset;
+}
+
+button {
+  min-width: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  background-color: transparent;
+  border-radius: 12px;
+}
+
+button:active {
+  background-color: @wm_button_active_color_a;
+}
+
+button:hover {
+  background-color: @wm_button_hover_color_a;
+}
+
+.applauncher {
+  background-color: @theme_bg_color;
+  color: @theme_fg_color;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px @wm_shadow;
+}
+
+.applauncher .app-title {
+  margin-left: 4px;
+}
+
+.bar-window {
+  background-color: transparent;
+}
+
+.bar {
+  background-color: @theme_bg_color;
+  color: @theme_fg_color;
+}
+
+.screencorners .corner {
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  box-shadow: 0 0 0 500px @theme_bg_color,
+    inset 0 2px 4px @wm_shadow;
+}
+
+.workspaces button:hover {
+  background-color: @wm_button_hover_color_b;
+}
+
+.workspaces button.focused,
+.workspaces button:active {
+  background-color: @insensitive_bg_color;
+  color: @insensitive_fg_color;
+}
+
+.client-title {
+  color: @theme_selected_bg_color;
+}
+
+.notification {
+  color: @theme_fg_color;
+}
+
+levelbar block,
+highlight {
+  min-height: 10px;
+}
+
+.quicksettings-window {
+  background-color: transparent;
+}
+
+.quicksettings {
+  padding: 0.4em;
+  background-color: @theme_bg_color;
+  color: @theme_fg_color;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px @wm_shadow;
+}
+
+.quicksettings button:hover {
+  background-color: @wm_button_hover_color_a;
+}
+
+.quicksettings button:active {
+  background-color: @wm_button_active_color_a;
+}
+
+.audio {
+  min-width: 450px;
+}
+
+.player {
+  min-width: 350px;
+  padding: 12px;
+}
+
+.player .img {
+  min-width: 100px;
+  min-height: 100px;
+  margin-right: 1em;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+}
+
+.player .title {
+  font-size: 0.9em;
+  margin: 0.4em 0;
+}
+
+.player .artist {
+  font-size: 0.85em;
+  color: @insensitive_fg_color;
+}
+
+.player scale.position {
+  padding: 0;
+}
+
+.player scale.position trough {
+  min-height: 8px;
+}
+
+.player scale.position highlight {
+  background-color: @theme_fg_color;
+}
+
+.player button {
+  min-height: 1em;
+  min-width: 1em;
+  padding: 0.4em;
+}
+
+.player button.play-pause {
+  margin: 0 0.4em;
+}
+
+.powermenu-button {
+  background-color: @theme_bg_color;
+  color: @brown_1;
+}
+
+.powermenu-button:hover {
+  background-color: @wm_button_hover_color_a;
+}
+
+.powermenu-button:active {
+  background-color: @wm_button_active_color_a;
+}
+
+.powermenu-window {
+  background-color: transparent;
+}
+
+.powermenu {
+  padding: 0.4em;
+  background-color: @theme_bg_color;
+  color: @theme_fg_color;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px @wm_shadow;
+}

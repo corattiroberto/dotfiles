@@ -1,0 +1,84 @@
+{
+  inputs,
+  pkgs,
+  lib,
+  config,
+  ...
+}: let
+  cfg = config.modules.ags;
+in {
+  imports = [
+    inputs.ags.homeManagerModules.default
+  ];
+
+  options.modules.ags = {
+    enable = lib.mkEnableOption "Enable ags";
+  };
+
+  config = lib.mkIf cfg.enable {
+    nixpkgs.overlays = lib.mkAfter [
+      (final: prev: {
+        ags = prev.ags.overrideAttrs (old: {
+          buildInputs = old.buildInputs ++ [pkgs.libdbusmenu-gtk3];
+        });
+      })
+    ];
+
+    programs.bun.enable = true;
+
+    home.file = {
+      "dotfiles/modules/home/ags/types" = {
+        source = "${pkgs.ags}/share/com.github.Aylur.ags/types";
+        recursive = true;
+      };
+
+       "dotfiles/modules/home/ags/palette.css".text = ''
+        :root {
+          --base00: ${config.stylix.base16Scheme.base00};
+          --base01: ${config.stylix.base16Scheme.base01};
+          --base02: ${config.stylix.base16Scheme.base02};
+          --base03: ${config.stylix.base16Scheme.base03};
+          --base04: ${config.stylix.base16Scheme.base04};
+          --base05: ${config.stylix.base16Scheme.base05};
+          --base06: ${config.stylix.base16Scheme.base06};
+          --base07: ${config.stylix.base16Scheme.base07};
+          --base08: ${config.stylix.base16Scheme.base08};
+          --base09: ${config.stylix.base16Scheme.base09};
+          --base0A: ${config.stylix.base16Scheme.base0A};
+          --base0B: ${config.stylix.base16Scheme.base0B};
+          --base0C: ${config.stylix.base16Scheme.base0C};
+          --base0D: ${config.stylix.base16Scheme.base0D};
+          --base0E: ${config.stylix.base16Scheme.base0E};
+          --base0F: ${config.stylix.base16Scheme.base0F};
+        }'';
+    };
+
+    programs.ags = {
+      enable = true;
+
+      configDir = ../ags;
+
+      extraPackages = with pkgs; [
+        gtksourceview
+        webkitgtk
+        accountsservice
+      ];
+    };
+
+    systemd.user.services.ags = {
+      Unit = {
+        Description = "ags";
+      };
+      Install = {
+        WantedBy = ["default.target"];
+      };
+      Service = {
+        Type = "simple";
+        ExecStart = "${pkgs.ags}/bin/ags";
+        Restart = "on-failure";
+        RestartSec = 2;
+        TimeoutStopSec = 10;
+      };
+    };
+  };
+}

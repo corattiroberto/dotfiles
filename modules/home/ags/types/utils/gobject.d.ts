@@ -1,1 +1,1 @@
-/nix/store/mbrb8pbxkpla3f8f90v43zbqsa2803kf-home-manager-files/dotfiles/modules/home/ags/types/utils/gobject.d.ts
+/nix/store/yqhl8knb8s2mwwvk0mzfxr8mnilljq8k-home-manager-files/.dotfiles/modules/home/ags/types/utils/gobject.d.ts

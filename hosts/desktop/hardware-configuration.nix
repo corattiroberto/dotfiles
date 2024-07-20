@@ -10,20 +10,18 @@
   ...
 }: {
   imports = [
-    (modulesPath + "/profiles/qemu-guest.nix")
+    (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
 
   boot.initrd.availableKernelModules = [
+    "nvme"
     "xhci_pci"
-    "ohci_pci"
-    "ehci_pci"
-    "virtio_pci"
     "ahci"
+    "usb_storage"
     "usbhid"
-    "sr_mod"
-    "virtio_blk"
+    "sd_mod"
   ];
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-amd"];
@@ -36,12 +34,12 @@
   ];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/5e5cac24-b190-46ce-8eb7-826eeadf42db";
+    device = "/dev/disk/by-uuid/e5d09b5f-69ee-4bca-8822-c2022d724715";
     fsType = "ext4";
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/9CAC-D84F";
+    device = "/dev/disk/by-uuid/A844-423C";
     fsType = "vfat";
   };
 

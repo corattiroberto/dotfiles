@@ -124,9 +124,9 @@ in {
             )
           );
 
-          windowrulev2 = [
-            "suppressevent maximize, class:.*"
-          ];
+        windowrulev2 = [
+          "suppressevent maximize, class:.*"
+        ];
       };
     };
   };

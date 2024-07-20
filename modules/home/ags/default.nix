@@ -5,11 +5,8 @@
   config,
   ...
 }: let
-
   cfg = config.modules.ags;
-
-in
-{
+in {
   imports = [
     inputs.ags.homeManagerModules.default
   ];

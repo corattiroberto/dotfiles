@@ -30,12 +30,12 @@ in
     programs.bun.enable = true;
 
     home.file = {
-      "dotfiles/modules/home/ags/types" = {
+      ".dotfiles/modules/home/ags/types" = {
         source = "${pkgs.ags}/share/com.github.Aylur.ags/types";
         recursive = true;
       };
 
-      "dotfiles/modules/home/ags/palette.css".text = ''
+      ".dotfiles/modules/home/ags/palette.css".text = ''
         @define-color base00 #${config.lib.stylix.colors.base00};
         @define-color base01 #${config.lib.stylix.colors.base01};
         @define-color base02 #${config.lib.stylix.colors.base02};

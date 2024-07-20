@@ -1,1 +1,0 @@
-/nix/store/yqhl8knb8s2mwwvk0mzfxr8mnilljq8k-home-manager-files/.dotfiles/modules/home/ags/types/@girs/dbusmenugtk3-0.4/dbusmenugtk3-0.4-ambient.d.ts

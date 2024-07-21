@@ -24,6 +24,8 @@ in {
       })
     ];
 
+    home.sessionVariables.GIO_EXTRA_MODULES = "${pkgs.gvfs}/lib/gio/modules";
+
     programs.bun.enable = true;
 
     home.file.".dotfiles/modules/home/ags/types" = {

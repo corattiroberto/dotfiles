@@ -17,24 +17,30 @@ function formatPlayerPosition(length: number): string {
 }
 
 const Player = (player: MprisPlayer) => {
+
   const CoverImage = Widget.Box({
     class_name: "img",
     vpack: "start",
-    css: player.bind("cover_path").transform(p => `
-        background-image: url('${p}');
+    css: Utils.merge([
+      player.bind("cover_path"),
+      player.bind("track_cover_url"),
+    ], (path, url) => `
+        background-image: url('${path || url}');
     `),
   })
 
   const Title = Widget.Label({
     class_name: "title",
-    wrap: true,
+    max_width_chars: 20,
+    truncate: "end",
     hpack: "start",
     label: player.bind("track_title"),
   })
 
   const Artist = Widget.Label({
     class_name: "artist",
-    wrap: true,
+    max_width_chars: 20,
+    truncate: "end",
     hpack: "start",
     label: player.bind("track_artists").transform(a => a.join(", ")),
   })
@@ -43,11 +49,11 @@ const Player = (player: MprisPlayer) => {
     class_name: "position",
     draw_value: false,
     on_change: ({ value }) => player.position = value * player.length,
-    visible: player.bind("length").as(l => l > 0),
     setup: self => {
-      function update() {
-        const value = player.position / player.length
-        self.value = value > 0 ? value : 0
+      const update = () => {
+        const { length, position } = player
+        self.visible = length > 0
+        self.value = length > 0 ? position / length : 0
       }
       self.hook(player, update)
       self.hook(player, update, "position")
@@ -59,7 +65,7 @@ const Player = (player: MprisPlayer) => {
     class_name: "position",
     hpack: "start",
     setup: self => {
-      const update = (_: any, time?: any) => {
+      const update = (_: unknown, time?: number) => {
         self.label = formatPlayerPosition(time || player.position)
         self.visible = player.length > 0
       }
@@ -119,6 +125,7 @@ const Player = (player: MprisPlayer) => {
   return Widget.Box(
     {
       class_name: "player",
+      vexpand: false,
     },
     CoverImage,
     Widget.Box(

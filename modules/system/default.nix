@@ -96,6 +96,7 @@
   services = {
     printing.enable = true;
     xserver.enable = true;
+    gvfs.enable = true;
   };
 
   system.stateVersion = "23.11";

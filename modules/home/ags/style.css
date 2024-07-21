@@ -1,4 +1,4 @@
-@import url("palette.css");
+@import url("../palette.css");
 @import url("../gtk-3.0/gtk.css");
 
 scale trough {
@@ -52,14 +52,19 @@ button:hover {
     inset 0 2px 4px @wm_shadow;
 }
 
+.workspaces button {
+  background-color: @insensitive_bg_color;
+  color: @insensitive_fg_color;
+}
+
 .workspaces button:hover {
   background-color: @wm_button_hover_color_b;
 }
 
 .workspaces button.focused,
 .workspaces button:active {
-  background-color: @insensitive_bg_color;
-  color: @insensitive_fg_color;
+  background-color: @theme_bg_color;
+  color: @theme_fg_color;
 }
 
 .client-title {

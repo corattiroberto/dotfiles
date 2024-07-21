@@ -8,22 +8,6 @@ import { QuickSettingsToggle } from "./QuickSettingsToggle.js"
 import { PowerMenuButton } from "./PowerMenuButton.js"
 
 
-function Notification() {
-  const popups = notifications.bind("popups")
-  return Widget.Box({
-    class_name: "notification",
-    visible: popups.as(p => p.length > 0),
-    children: [
-      Widget.Icon({
-        icon: "preferences-system-notifications-symbolic"
-      }),
-      Widget.Label({
-        label: popups.as(p => p[0]?.summary || "")
-      })
-    ]
-  })
-}
-
 function SysTray() {
   const items = systemtray.bind("items")
     .as(items => items.map(item => Widget.Button({
@@ -62,7 +46,6 @@ function Right() {
     spacing: 8,
     hpack: "end",
     children: [
-      Notification(),
       SysTray(),
       QuickSettingsToggle(),
       PowerMenuButton(),

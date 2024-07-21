@@ -1,4 +1,5 @@
 import { Audio } from "./Audio.js"
+import { Bluetooth } from "./Bluetooth.js"
 import { Media } from "./Media.js"
 
 export const QuickSettings = () => {
@@ -22,6 +23,7 @@ export const QuickSettings = () => {
       margin_left: 8,
       children: [
         Audio(),
+        Bluetooth(),
         Media()
       ]
     })

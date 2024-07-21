@@ -12,6 +12,7 @@
     ./greetd
     ./i18n
     ./keyboard
+    ./keyring
     ./networking
     ./nh
     ./polkit
@@ -27,6 +28,8 @@
       enable = lib.mkDefault true;
       language = language;
     };
+
+    keyring.enable = lib.mkDefault true;
 
     networking = {
       enable = lib.mkDefault true;

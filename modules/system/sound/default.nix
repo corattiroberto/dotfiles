@@ -14,6 +14,7 @@ in {
   config = lib.mkIf cfg.enable {
     environment.systemPackages = lib.mkAfter [
       pkgs.pulseaudio
+      pkgs.playerctl
     ];
 
     sound.enable = true;

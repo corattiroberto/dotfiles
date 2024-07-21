@@ -9,6 +9,7 @@
   ...
 }: {
   imports = [
+    ./bluetooth
     ./greetd
     ./i18n
     ./keyboard
@@ -22,6 +23,8 @@
   ];
 
   modules = {
+    bluetooth.enable = lib.mkDefault true;
+
     greetd.enable = lib.mkDefault true;
 
     i18n = {

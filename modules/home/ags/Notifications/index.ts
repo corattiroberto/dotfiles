@@ -117,7 +117,7 @@ export const Notifications = (monitor: number = 0) => {
   return Widget.Window({
     monitor,
     name: `notifications${monitor}`,
-    class_name: "notification",
+    class_name: "notifications",
     anchor: ["top", "right"],
     child: Widget.Box({
       css: "min-width: 2px; min-height: 2px;",

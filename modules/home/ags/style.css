@@ -36,6 +36,65 @@ button:hover {
   margin-left: 4px;
 }
 
+/* notifications */
+window.notifications>box {
+  padding: 0.4em;
+}
+
+window.notifications .icon {
+  min-width: 68px;
+  min-height: 68px;
+  margin-right: 1em;
+}
+
+window.notifications .icon image {
+  font-size: 58px;
+  margin: 5px;
+  color: @theme_fg_color;
+}
+
+window.notifications .icon box {
+  min-width: 68px;
+  min-height: 68px;
+  border-radius: 12px;
+}
+
+window.notifications .notification {
+  min-width: 350px;
+  border-radius: 24px;
+  padding: 1em;
+  margin: 0.4em;
+  background-color: @theme_bg_color;
+  box-shadow: 0 2px 4px @wm_shadow;
+}
+
+window.notifications .notification.critical {
+  box-shadow: 0 2px 4px @brown_1;
+}
+
+window.notifications .title {
+  color: @theme_fg_color;
+  font-size: 1.4em;
+}
+
+window.notifications .body {
+  color: @theme_fg_color;
+}
+
+window.notifications .actions .action-button {
+  margin: 0 0.4em;
+  margin-top: 0.8em;
+}
+
+window.notifications .actions .action-button:first-child {
+  margin-left: 0;
+}
+
+window.notifications .actions .action-button:last-child {
+  margin-right: 0;
+}
+
+
 .bar-window {
   background-color: transparent;
 }
@@ -46,8 +105,8 @@ button:hover {
 }
 
 .screencorners .corner {
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
+  border-top-left-radius: 36px;
+  border-top-right-radius: 36px;
   box-shadow: 0 0 0 500px @theme_bg_color,
     inset 0 2px 4px @wm_shadow;
 }

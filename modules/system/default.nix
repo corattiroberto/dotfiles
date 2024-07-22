@@ -16,6 +16,7 @@
     ./keyring
     ./networking
     ./nh
+    ./notifications
     ./polkit
     ./shell
     ./sound
@@ -40,6 +41,8 @@
     };
 
     nh.enable = lib.mkDefault true;
+
+    notifications.enable = lib.mkDefault true;
 
     sound.enable = lib.mkDefault true;
 

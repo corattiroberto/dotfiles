@@ -15,6 +15,7 @@ in {
     environment.systemPackages = lib.mkAfter [
       pkgs.pulseaudio
       pkgs.playerctl
+      pkgs.pavucontrol
     ];
 
     sound.enable = true;

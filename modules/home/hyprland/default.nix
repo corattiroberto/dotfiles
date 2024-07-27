@@ -1,6 +1,8 @@
 {
   inputs,
+  host,
   pkgs,
+  osConfig,
   lib,
   config,
   ...
@@ -28,6 +30,15 @@ in {
         general = {
           border_size = 0;
           allow_tearing = false;
+
+          gaps_in = 8;
+          gaps_out = 16;
+        };
+
+        input = {
+          kb_layout = osConfig.services.xserver.xkb.layout;
+          kb_variant = osConfig.services.xserver.xkb.variant;
+          sensitivity = -0.5;
         };
 
         misc = {
@@ -36,7 +47,7 @@ in {
         };
 
         decoration = {
-          rounding = 12;
+          rounding = 16;
 
           #active_opacity = 0.75;
           #inactive_opacity = 0.75;
@@ -59,9 +70,9 @@ in {
           enabled = true;
           bezier = "ease-out-circ, 0, 0.55, 0.45, 1";
           animation = [
-            "windows, 1, 3, ease-out-circ, popin"
-            "border, 1, 3, ease-out-circ"
-            "borderangle, 1, 3, ease-out-circ"
+            "windows, 1, 2, ease-out-circ, popin"
+            "border, 1, 2, ease-out-circ"
+            "borderangle, 1, 2, ease-out-circ"
             "fade, 1, 3, ease-out-circ"
             "workspaces, 1, 3, ease-out-circ, slide"
           ];

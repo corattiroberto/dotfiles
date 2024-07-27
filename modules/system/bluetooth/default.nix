@@ -30,5 +30,9 @@ in {
       wantedBy = ["default.target"];
       serviceConfig.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
     };
+
+    environment.systemPackages = lib.mkAfter [
+      pkgs.blueman
+    ];
   };
 }

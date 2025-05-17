@@ -15,6 +15,7 @@
     ./packages
     ./themes
     ./vscode
+    ./waybar
   ];
 
   nixpkgs.config.allowUnfree = true;

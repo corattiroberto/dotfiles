@@ -110,7 +110,7 @@ in {
             "$mod, RETURN, exec, $terminal"
             "$mod, E, exec, $fileManager"
             "$mod, B, exec, $browser"
-            "$mod, D, exec, ags -t applauncher"
+            "$mod, D, exec, fuzzel"
             "$mod, Q, exec, ags -t quicksettings"
             "$mod, BACKSPACE, exec, ags -t powermenu"
             "$mod, C, exec, vesktop"

@@ -21,6 +21,7 @@
     packages.enable = true;
     themes.enable = true;
     vscode.enable = true;
+    waybar.enable = true;
   };
 
   home.stateVersion = "24.05";

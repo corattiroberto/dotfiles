@@ -17,13 +17,13 @@ export const QuickSettings = () => {
     child: Widget.Box({
       class_name: "quicksettings",
       vertical: true,
-      margin_top: 8,
-      margin_right: 8,
-      margin_bottom: 8,
-      margin_left: 8,
+      margin_top: 12,
+      margin_right: 12,
+      margin_bottom: 12,
+      margin_left: 12,
       children: [
-        Audio(),
         Bluetooth(),
+        Audio(),
         Media()
       ]
     })

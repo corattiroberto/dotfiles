@@ -45,7 +45,6 @@ export const Notifications = (monitor: number = 0) => {
       hexpand: true,
       max_width_chars: 24,
       truncate: "end",
-      wrap: true,
       label: n.summary,
       use_markup: true,
     })

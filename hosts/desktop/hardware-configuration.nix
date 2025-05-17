@@ -7,13 +7,18 @@
   pkgs,
   system,
   modulesPath,
+  user,
   ...
-}: {
+}:
+  let
+    uid = config.users.users.${user}.uid;
+  in
+{
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   boot.initrd.availableKernelModules = [
     "nvme"
@@ -41,6 +46,12 @@
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/A844-423C";
     fsType = "vfat";
+  };
+
+  fileSystems."/media/${user}/ssd" = {
+    device = "/dev/disk/by-uuid/3CE4C1E5E4C1A20E";
+    fsType = "ntfs-3g";
+    options = [ "rw" "uid=${toString uid}" ];
   };
 
   swapDevices = [];

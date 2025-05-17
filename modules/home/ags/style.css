@@ -2,7 +2,7 @@
 @import url("../gtk-3.0/gtk.css");
 
 scale trough {
-  min-height: 12px;
+  min-height: 16px;
 }
 
 scale slider {
@@ -38,7 +38,7 @@ button:hover {
 
 /* notifications */
 window.notifications>box {
-  padding: 0.4em;
+  padding: 8px;
 }
 
 window.notifications .icon {
@@ -112,18 +112,19 @@ window.notifications .actions .action-button:last-child {
 }
 
 .workspaces button {
-  background-color: @insensitive_bg_color;
-  color: @insensitive_fg_color;
+  background-color: @wm_bg_a;
+  color: @wm_unfocused_title;
+  box-shadow: 0 1px 2px @wm_shadow;
 }
 
 .workspaces button:hover {
-  background-color: @wm_button_hover_color_b;
+  background-color: @wm_button_hover_color_a;
 }
 
 .workspaces button.focused,
 .workspaces button:active {
-  background-color: @theme_bg_color;
-  color: @theme_fg_color;
+  background-color: @theme_selected_bg_color;
+  color: @theme_selected_fg_color;
 }
 
 .client-title {
@@ -144,28 +145,46 @@ highlight {
 }
 
 .quicksettings {
-  padding: 0.4em;
+  padding: 8px;
   background-color: @theme_bg_color;
   color: @theme_fg_color;
-  border-radius: 12px;
+  border-radius: 24px;
   box-shadow: 0 2px 4px @wm_shadow;
 }
 
+.quicksettings button {
+  background-color: @wm_bg_a;
+  color: @wm_unfocused_title;
+  box-shadow: 0 1px 2px @wm_shadow;
+}
+
 .quicksettings button:hover {
-  background-color: @wm_button_hover_color_a;
+  background-color: @wm_bg_a;
 }
 
 .quicksettings button:active {
-  background-color: @wm_button_active_color_a;
+  background-color: @wm_bg_a;
+}
+
+.quicksettings .toggle-button.active,
+.quicksettings .settings-button.active {
+  background-color: @theme_selected_bg_color;
+  color: @theme_selected_fg_color;
+}
+
+.bluetooth {
+  min-width: 200px;
+  padding: 0.8em 0.8em 0;
 }
 
 .audio {
   min-width: 450px;
+  padding: 0.8em;
 }
 
 .player {
   min-width: 350px;
-  padding: 12px;
+  padding: 0 0.8em 0.8em;
 }
 
 .player .img {
@@ -203,6 +222,16 @@ highlight {
   min-height: 1em;
   min-width: 1em;
   padding: 0.4em;
+  background-color: @theme_bg_color;
+  color: @theme_fg_color;
+}
+
+.player button:hover {
+  background-color: @wm_button_hover_color_a;
+}
+
+.player button:active {
+  background-color: @wm_button_active_color_a;
 }
 
 .player button.play-pause {

@@ -30,9 +30,13 @@ export const Audio = () => {
     icon: Utils.watch(getSpeakerIcon(), audio.speaker, getSpeakerIcon),
   })
 
-  const speakerButton = Widget.Button({
+  const speakerButton = Widget.ToggleButton({
+    class_name: "toggle-button",
+    on_toggled: () => audio.speaker.is_muted = !audio.speaker.is_muted,
+    setup: self => self.hook(audio, () => {
+      self.toggleClassName("active", !audio.speaker.is_muted)
+    }),
     child: speakerIcon,
-    on_clicked: () => audio.speaker.is_muted = !audio.speaker.is_muted,
   })
 
   const microphoneIcons = {
@@ -54,9 +58,13 @@ export const Audio = () => {
     icon: Utils.watch(getMicrophoneIcon(), audio.microphone, getMicrophoneIcon),
   })
 
-  const microphoneButton = Widget.Button({
+  const microphoneButton = Widget.ToggleButton({
+    class_name: "toggle-button",
+    on_toggled: () => audio.microphone.is_muted = !audio.microphone.is_muted,
+    setup: self => self.hook(audio, () => {
+      self.toggleClassName("active", !audio.microphone.is_muted)
+    }),
     child: microphoneIcon,
-    on_clicked: () => audio.microphone.is_muted = !audio.microphone.is_muted,
   })
 
   return Widget.Box({

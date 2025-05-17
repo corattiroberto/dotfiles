@@ -26,6 +26,7 @@ export const Workspaces = () => {
 
   return Widget.Box({
     class_name: "workspaces",
+    spacing: 6,
     children: workspaces
   })
 }

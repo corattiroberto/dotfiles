@@ -14,7 +14,7 @@ in {
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs;
       lib.mkAfter [
-        gnome.adwaita-icon-theme
+        adwaita-icon-theme
         morewaita-icon-theme
       ];
 

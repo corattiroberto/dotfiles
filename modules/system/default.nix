@@ -86,10 +86,13 @@
       ];
       theme = "lone";
     };
+
+    supportedFilesystems = [ "ntfs" ];
   };
 
   users.users.${user} = {
     isNormalUser = true;
+    uid = 1000;
     description = "${user}";
     extraGroups = [
       "networkmanager"

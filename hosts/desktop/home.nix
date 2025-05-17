@@ -12,7 +12,8 @@
   home.homeDirectory = "/home/korazza";
 
   modules = {
-    ags.enable = true;
+    ags.enable = false;
+    fuzzel.enable = true;
     git.enable = true;
     hyprland.enable = true;
     icons.enable = true;

@@ -7,6 +7,7 @@
 }: {
   imports = [
     ./ags
+    ./fuzzel
     ./git
     ./hyprland
     ./icons

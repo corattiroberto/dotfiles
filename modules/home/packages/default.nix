@@ -19,6 +19,7 @@ in {
       vesktop
       obsidian
       spotify
+      onlyoffice-bin
     ];
 
     programs = {

@@ -24,8 +24,8 @@
     "nvme"
     "xhci_pci"
     "ahci"
-    "usb_storage"
     "usbhid"
+    "usb_storage"
     "sd_mod"
   ];
   boot.initrd.kernelModules = [];
@@ -39,13 +39,14 @@
   ];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/e5d09b5f-69ee-4bca-8822-c2022d724715";
+    device = "/dev/disk/by-uuid/9cd23d77-ea1f-4891-af0c-49bc2b0dff52";
     fsType = "ext4";
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/A844-423C";
+    device = "/dev/disk/by-uuid/66AE-788C";
     fsType = "vfat";
+    options = [ "fmask=0077" "dmask=0077" ];
   };
 
   fileSystems."/media/${user}/ssd" = {
@@ -54,7 +55,9 @@
     options = [ "rw" "uid=${toString uid}" ];
   };
 
-  swapDevices = [];
+  swapDevices = [
+    { device = "/dev/disk/by-uuid/98fdad38-3a98-4efe-9f02-16cf481c56fa"; }
+  ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
@@ -64,4 +67,5 @@
   # networking.interfaces.enp0s8.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault system;
+  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

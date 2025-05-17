@@ -15,32 +15,34 @@ in {
     programs.vscode = {
       enable = true;
 
-      userSettings = {
-        "window.titleBarStyle" = "custom";
+      profiles.default = {
+        userSettings = {
+          "window.titleBarStyle" = "custom";
 
-        "workbench.iconTheme" = "material-icon-theme";
-        "workbench.startupEditor" = "none";
-        "workbench.editor.decorations.colors" = true;
-        "workbench.editor.decorations.badges" = true;
+          "workbench.iconTheme" = "material-icon-theme";
+          "workbench.startupEditor" = "none";
+          "workbench.editor.decorations.colors" = true;
+          "workbench.editor.decorations.badges" = true;
 
-        "material-icon-theme.activeIconPack" = "react_redux";
-        "files.autoSaveDelay" = 800;
+          "material-icon-theme.activeIconPack" = "react_redux";
+          "files.autoSaveDelay" = 800;
 
-        "editor.formatOnSave" = true;
-        "editor.fontLigatures" = true;
-        "editor.tabSize" = 2;
-        "editor.selectionClipboard" = false;
-        "editor.suggestSelection" = "first";
-        "editor.linkedEditing" = true;
-        "editor.bracketPairColorization.enabled" = true;
+          "editor.formatOnSave" = true;
+          "editor.fontLigatures" = true;
+          "editor.tabSize" = 2;
+          "editor.selectionClipboard" = false;
+          "editor.suggestSelection" = "first";
+          "editor.linkedEditing" = true;
+          "editor.bracketPairColorization.enabled" = true;
 
-        "git.decorations.enabled" = true;
+          "git.decorations.enabled" = true;
+        };
+
+        extensions = with pkgs.vscode-extensions; [
+          pkief.material-icon-theme
+          bbenoist.nix
+        ];
       };
-
-      extensions = with pkgs.vscode-extensions; [
-        pkief.material-icon-theme
-        bbenoist.nix
-      ];
     };
   };
 }

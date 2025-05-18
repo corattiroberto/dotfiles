@@ -36,6 +36,8 @@
     "pcie_aspm=1"
     "pcie_aspm.policy=performance"
     "amdgpu_aspm=1"
+    "quiet"
+    "loglevel=3"
   ];
 
   fileSystems."/" = {

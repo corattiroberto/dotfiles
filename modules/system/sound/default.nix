@@ -15,7 +15,7 @@ in {
     environment.systemPackages = lib.mkAfter [
       pkgs.pulseaudio
       pkgs.playerctl
-      pkgs.pavucontrol
+      pkgs.pwvucontrol
     ];
 
     services.pulseaudio.enable = false;

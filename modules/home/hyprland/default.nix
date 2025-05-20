@@ -8,6 +8,7 @@
   ...
 }: let
   cfg = config.modules.hyprland;
+  waybarEnabled = config.modules.waybar.enable or false;
 in {
   options.modules.hyprland = {
     enable = lib.mkEnableOption "enable hyprland wm";
@@ -26,6 +27,9 @@ in {
         "$terminal" = "kitty";
         "$fileManager" = "nautilus";
         "$browser" = "brave";
+
+        exec-once = [
+        ] ++ lib.optionals waybarEnabled [ "waybar" ];
 
         general = {
           border_size = 0;
@@ -65,6 +69,13 @@ in {
             popups = true;
           };
         };
+
+        layerrule = [
+          "blur, waybar"
+          "blurpopups, waybar"
+          "blur, launcher"
+          "blurpopups, launcher"
+        ];
 
         animations = {
           enabled = true;

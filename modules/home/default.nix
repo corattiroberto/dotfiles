@@ -12,6 +12,7 @@
     ./hyprland
     ./icons
     ./kitty
+    ./mithril-shell
     ./packages
     ./themes
     ./vscode

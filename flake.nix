@@ -12,6 +12,8 @@
     stylix.url = "github:danth/stylix";
 
     ags.url = "github:Aylur/ags";
+
+    mithril-shell.url = "github:andreashgk/mithril-shell";
   };
 
   outputs = {

@@ -31,8 +31,6 @@ in {
         popups = 0.5;
       };
 
-      targets.plymouth.enable = false;
-
       fonts = {
         serif = {
           package = pkgs.dejavu_fonts;
@@ -59,6 +57,11 @@ in {
         package = pkgs.bibata-cursors;
         name = "Bibata-Modern-Classic";
         size = 24;
+      };
+
+
+      targets = {
+        plymouth.enable = false;
       };
     };
 

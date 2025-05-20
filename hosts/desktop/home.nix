@@ -18,10 +18,11 @@
     hyprland.enable = true;
     icons.enable = true;
     kitty.enable = true;
+    mithril-shell.enable = true;
     packages.enable = true;
     themes.enable = true;
     vscode.enable = true;
-    waybar.enable = true;
+    waybar.enable = false;
   };
 
   home.stateVersion = "24.05";

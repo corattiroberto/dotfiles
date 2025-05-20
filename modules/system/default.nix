@@ -69,7 +69,7 @@
       efi.canTouchEfiVariables = true;
     };
 
-    kernelParams = lib.mkAfter [
+    kernelParams = [
       "quiet"
       "splash"
       "boot.shell_on_fail"
@@ -79,12 +79,15 @@
       "udev.log_priority=3"
     ];
 
+    consoleLogLevel = 3;
+    initrd.verbose = false;
+
     plymouth = {
       enable = true;
       themePackages = with pkgs; [
         adi1090x-plymouth-themes
       ];
-      theme = "lone";
+      theme = "rog_2";
     };
 
     supportedFilesystems = [ "ntfs" ];

@@ -26,8 +26,8 @@ in {
           "margin-bottom" = -1;
           passthrough = false;
           height = 41;
-          
-          modules-left = [ 
+
+          modules-left = [
             "custom/os_button"
             "hyprland/workspaces"
             "wlr/taskbar"
@@ -158,7 +158,6 @@ in {
               "on-scroll-down" = "shift_down";
             };
           };
-
         };
       };
     };

@@ -7,11 +7,13 @@
 }: {
   imports = [
     inputs.mithril-shell.homeManagerModules.default
+    #inputs.hyprpanel.homeManagerModules.hyprpanel
 
     ./ags
     ./fuzzel
     ./git
     ./hyprland
+    ./hyprpanel
     ./icons
     ./kitty
     ./mithril-shell

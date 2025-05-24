@@ -28,8 +28,10 @@ in {
         "$fileManager" = "nautilus";
         "$browser" = "brave";
 
-        exec-once = [
-        ] ++ lib.optionals waybarEnabled [ "waybar" ];
+        exec-once =
+          [
+          ]
+          ++ lib.optionals waybarEnabled ["waybar"];
 
         general = {
           border_size = 0;

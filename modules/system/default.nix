@@ -90,7 +90,7 @@
       theme = "rog_2";
     };
 
-    supportedFilesystems = [ "ntfs" ];
+    supportedFilesystems = ["ntfs"];
   };
 
   users.users.${user} = {

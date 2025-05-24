@@ -15,6 +15,7 @@
     fuzzel.enable = true;
     git.enable = true;
     hyprland.enable = true;
+    hyprpanel.enable = true;
     icons.enable = true;
     kitty.enable = true;
     packages.enable = true;

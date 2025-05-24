@@ -9,11 +9,9 @@
   modulesPath,
   user,
   ...
-}:
-  let
-    uid = config.users.users.${user}.uid;
-  in
-{
+}: let
+  uid = config.users.users.${user}.uid;
+in {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
@@ -48,17 +46,17 @@
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/66AE-788C";
     fsType = "vfat";
-    options = [ "fmask=0077" "dmask=0077" ];
+    options = ["fmask=0077" "dmask=0077"];
   };
 
   fileSystems."/media/${user}/ssd" = {
     device = "/dev/disk/by-uuid/3CE4C1E5E4C1A20E";
     fsType = "ntfs-3g";
-    options = [ "rw" "uid=${toString uid}" ];
+    options = ["rw" "uid=${toString uid}"];
   };
 
   swapDevices = [
-    { device = "/dev/disk/by-uuid/98fdad38-3a98-4efe-9f02-16cf481c56fa"; }
+    {device = "/dev/disk/by-uuid/98fdad38-3a98-4efe-9f02-16cf481c56fa";}
   ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

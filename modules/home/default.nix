@@ -7,7 +7,7 @@
 }: {
   imports = [
     inputs.mithril-shell.homeManagerModules.default
-    #inputs.hyprpanel.homeManagerModules.hyprpanel
+    inputs.hyprpanel.homeManagerModules.hyprpanel
 
     ./ags
     ./fuzzel

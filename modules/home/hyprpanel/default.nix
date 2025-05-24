@@ -13,7 +13,6 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
-    imports = [inputs.hyprpanel.homeManagerModules.hyprpanel];
 
     programs.hyprpanel = {
       # Enable the module.

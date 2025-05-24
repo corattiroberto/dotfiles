@@ -12,17 +12,14 @@
   home.homeDirectory = "/home/korazza";
 
   modules = {
-    ags.enable = false;
     fuzzel.enable = true;
     git.enable = true;
     hyprland.enable = true;
     icons.enable = true;
     kitty.enable = true;
-    mithril-shell.enable = true;
     packages.enable = true;
     themes.enable = true;
     vscode.enable = true;
-    waybar.enable = false;
   };
 
   home.stateVersion = "24.05";

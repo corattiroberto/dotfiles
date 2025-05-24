@@ -75,6 +75,10 @@ in {
           "blurpopups, waybar"
           "blur, launcher"
           "blurpopups, launcher"
+          "blur, bar0"
+          "blurpopups, bar0"
+          "blur, bar1"
+          "blurpopups, bar1"
         ];
 
         animations = {

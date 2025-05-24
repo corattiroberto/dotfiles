@@ -11,6 +11,8 @@
 
     stylix.url = "github:danth/stylix";
 
+    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+
     ags.url = "github:Aylur/ags";
 
     mithril-shell.url = "github:andreashgk/mithril-shell";
@@ -43,6 +45,7 @@
       modules = [
         ./hosts/${host}/configuration.nix
         inputs.stylix.nixosModules.stylix
+        {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
       ];
     };
 

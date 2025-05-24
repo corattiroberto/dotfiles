@@ -21,5 +21,7 @@ in {
         stylix.enable = true;
       };
     };
+
+    programs.mithril-control-center.enable = true;
   };
 }

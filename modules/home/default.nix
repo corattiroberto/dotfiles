@@ -6,6 +6,8 @@
   ...
 }: {
   imports = [
+    inputs.mithril-shell.homeManagerModules.default
+
     ./ags
     ./fuzzel
     ./git

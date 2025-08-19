@@ -45,7 +45,6 @@
       modules = [
         ./hosts/${host}/configuration.nix
         inputs.stylix.nixosModules.stylix
-        {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
       ];
     };
 

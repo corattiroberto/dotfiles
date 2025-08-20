@@ -19,6 +19,7 @@
     ./notifications
     ./polkit
     ./shell
+    ./sops
     ./sound
     ./stylix
   ];
@@ -47,6 +48,8 @@
     sound.enable = lib.mkDefault true;
 
     polkit.enable = lib.mkDefault true;
+
+    sops.enable = lib.mkDefault true;
 
     shell = {
       enable = lib.mkDefault true;
@@ -92,6 +95,11 @@
 
     supportedFilesystems = ["ntfs"];
   };
+
+  environment.systemPackages = with pkgs; [
+    age
+    sops
+  ];
 
   users.users.${user} = {
     isNormalUser = true;

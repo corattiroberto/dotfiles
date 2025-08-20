@@ -19,7 +19,57 @@ in {
       systemd.enable = true;
 
       settings = {
-        bar.launcher.icon = "";
+        bar = {
+          launcher.icon = "";
+
+          layouts = {
+            "*" = {
+              "left" = [
+                "dashboard"
+                "workspaces"
+                "windowtitle"
+                "media"
+                "cava"
+              ];
+              "middle" = [
+                "clock"
+                "weather"
+              ];
+              "right" = [
+                "microphone"
+                "volume"
+                "cpu"
+                "cputemp"
+                "ram"
+                "network"
+                "bluetooth"
+                "systray"
+                "notifications"
+                "power"
+              ];
+            };
+          };
+
+          clock = {
+            format = "%d/%m/%y %H:%M";
+          };
+        };
+
+        menus = {
+          clock = {
+            time = {
+              military = true;
+              hideSeconds = true;
+            };
+
+            weather = {
+              unit = "metric";
+              location = "Rome, Italy";
+              key = "$WEATHER_API_KEY";
+              refreshInterval = 600;
+            };
+          };
+        };
 
         theme = {
           name = "tokyo_night";

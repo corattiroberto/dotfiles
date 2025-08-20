@@ -3,11 +3,16 @@
   lib,
   pkgs,
   config,
+  secrets,
   ...
 }: {
+
+  # home.sessionVariables = {
+  #   WEATHER_API_KEY = secrets.weatherApiKey;
+  # };
+
   imports = [
     inputs.mithril-shell.homeManagerModules.default
-    #inputs.hyprpanel.homeManagerModules.hyprpanel
 
     ./ags
     ./fuzzel

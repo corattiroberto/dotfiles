@@ -64,8 +64,8 @@ in {
 
             weather = {
               unit = "metric";
-              location = "Rome, Italy";
-              key = "$WEATHER_API_KEY";
+              location = "41.863978, 12.669580";
+              key = "/var/lib/sopsjson/secrets.json";
               refreshInterval = 600;
             };
           };

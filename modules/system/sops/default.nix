@@ -23,9 +23,35 @@ in {
     
       secrets = {
         weather_api_key = {
-          owner = user;
+          owner = "sopsjson";
         };
       };
+    };
+
+    systemd.services."sopsjson" = {
+      script = ''
+        echo "
+        {
+          \"weather_api_key\": \"$(cat ${config.sops.secrets.weather_api_key.path})\"
+        }
+        " > /var/lib/sopsjson/secrets.json
+      '';
+
+      serviceConfig = {
+        User = "sopsjson";
+        WorkingDirectory = "/var/lib/sopsjson";
+      };
+    };
+
+    users = {
+      users.sopsjson = {
+        home = "/var/lib/sopsjson";
+        createHome = true;
+        isSystemUser = true;
+        group = "sopsjson";
+      };
+
+      groups.sopsjson = { };
     };
   };
 }

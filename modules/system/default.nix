@@ -103,7 +103,10 @@
     ];
   };
 
-  time.timeZone = timeZone;
+  time = {
+    hardwareClockInLocalTime = true;
+    timeZone = timeZone;
+  };
 
   services = {
     printing.enable = true;

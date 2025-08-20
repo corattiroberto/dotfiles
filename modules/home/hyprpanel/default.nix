@@ -14,11 +14,9 @@ in {
 
   config = lib.mkIf cfg.enable {
     programs.hyprpanel = {
+      package = inputs.hyprpanel.packages.${pkgs.system}.default;
       enable = true;
-      overlay.enable = true;
       systemd.enable = true;
-      hyprland.enable = true;
-      overwrite.enable = true;
 
       settings = {
         bar.launcher.icon = "";

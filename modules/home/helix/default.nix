@@ -32,7 +32,6 @@ in {
           lsp = {
             display-messages = true;
             auto-signature-help = true;
-            auto-format = true;
           };
         };
 

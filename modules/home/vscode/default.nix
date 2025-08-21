@@ -25,6 +25,7 @@ in {
           "workbench.editor.decorations.badges" = true;
 
           "material-icon-theme.activeIconPack" = "react_redux";
+          "files.autoSave" = "afterDelay";
           "files.autoSaveDelay" = 800;
 
           "editor.formatOnSave" = true;
@@ -36,13 +37,48 @@ in {
           "editor.bracketPairColorization.enabled" = true;
 
           "git.decorations.enabled" = true;
+
+          # cpp
+          "C_Cpp.intelliSenseEngine" = "disabled";
+          "clangd.path" = "clangd";
+          "clangd.arguments" = [
+            "--background-index"
+            "--clang-tidy"
+            "--completion-style=detailed"
+            "--header-insertion=iwyu"
+          ];
+
+          "cmake.generator" = "Ninja";
+          "cmake.buildDirectory" = "\${workspaceFolder}/build";
+          "cmake.configureOnOpen" = true;
+          "cmake.exportCompileCommandsFile" = true;
+
+          "[cpp]" = { "editor.defaultFormatter" = "xaver.clang-format"; };
+          "[c]" = { "editor.defaultFormatter" = "xaver.clang-format"; };
+          "clang-format.style" = "LLVM";
         };
 
         extensions = with pkgs.vscode-extensions; [
           pkief.material-icon-theme
           bbenoist.nix
+
+          # cpp
+          llvm-vs-code-extensions.vscode-clangd
+          ms-vscode.cpptools
+          ms-vscode.cmake-tools
+          vadimcn.vscode-lldb
+          xaver.clang-format
         ];
       };
     };
+
+    home.packages = with pkgs; [
+      clang 
+      clang-tools
+      cmake
+      ninja
+      lldb
+      gdb
+    ];
   };
 }

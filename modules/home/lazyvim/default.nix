@@ -18,12 +18,8 @@ in {
       EDITOR = "nvim";
     };
 
-    programs.neovim = {
+    programs.lazyvim = {
       enable = true;
-      package = pkgs.neovim-nightly;
-      vimAlias = true;
-      vimdiffAlias = true;
-      withNodeJs = true;
     };
   };
 }

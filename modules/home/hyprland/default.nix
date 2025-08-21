@@ -136,12 +136,12 @@ in {
             "$mod, T, exec, $terminal -e btop"
             "$mod, C, exec, vesktop"
             "$mod, V, exec, code"
+            "$mod, N, exec, $terminal -e nvim"
             "$mod, M, exec, spotify"
             "$mod, O, exec, obsidian"
             "$mod, A, exec, $webapp=\"https:\\\\chatgpt.com\""
             "$mod, W, exec, $webapp=\"https:\\\\web.whatsapp.com\""
             "$mod, Y, exec, $webapp=\"https:\\\\youtube.com\""
-            "$mod, N, exec, $webapp=\"https:\\\\netflix.com\""
           ]
           ++ (
             builtins.concatLists (

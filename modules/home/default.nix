@@ -13,6 +13,7 @@
 
   imports = [
     inputs.mithril-shell.homeManagerModules.default
+    inputs.LazyVim.homeManagerModules.default
 
     ./ags
     ./fuzzel

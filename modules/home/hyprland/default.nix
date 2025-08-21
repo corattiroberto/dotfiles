@@ -136,7 +136,7 @@ in {
             "$mod, T, exec, $terminal -e btop"
             "$mod, C, exec, vesktop"
             "$mod, V, exec, code"
-            "$mod, N, exec, $terminal -e nvim"
+            "$mod, H, exec, $terminal -e hx"
             "$mod, M, exec, spotify"
             "$mod, O, exec, obsidian"
             "$mod, A, exec, $webapp=\"https:\\\\chatgpt.com\""

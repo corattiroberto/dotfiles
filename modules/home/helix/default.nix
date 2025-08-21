@@ -19,7 +19,6 @@ in {
       defaultEditor = true;
 
       settings = {
-        theme = "auto";
         editor = {
           line-number = "relative";
           cursorline = true;
@@ -86,7 +85,6 @@ in {
     home.packages = with pkgs; [
       clang
       clang-tools
-      clang-format
     ];
   };
 }

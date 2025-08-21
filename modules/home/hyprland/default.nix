@@ -15,7 +15,11 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
-    nixpkgs.config.programs.hyprland.enable = true;
+    nixpkgs.config.programs = {
+      hyprland = {
+        enable = true;
+      };
+    };
 
     wayland.windowManager.hyprland = {
       enable = true;
@@ -27,6 +31,7 @@ in {
         "$terminal" = "kitty";
         "$fileManager" = "nautilus";
         "$browser" = "brave";
+        "$webapp" = "$browser --app";
 
         exec-once =
           [
@@ -128,12 +133,15 @@ in {
             "$mod, E, exec, $fileManager"
             "$mod, B, exec, $browser"
             "$mod, D, exec, fuzzel"
-            "$mod, Q, exec, ags -t quicksettings"
-            "$mod, BACKSPACE, exec, ags -t powermenu"
+            "$mod, T, exec, $terminal -e btop"
             "$mod, C, exec, vesktop"
             "$mod, V, exec, code"
-            "$mod, S, exec, spotify"
+            "$mod, M, exec, spotify"
             "$mod, O, exec, obsidian"
+            "$mod, A, exec, $webapp=\"https:\\\\chatgpt.com\""
+            "$mod, W, exec, $webapp=\"https:\\\\web.whatsapp.com\""
+            "$mod, Y, exec, $webapp=\"https:\\\\youtube.com\""
+            "$mod, N, exec, $webapp=\"https:\\\\netflix.com\""
           ]
           ++ (
             builtins.concatLists (
@@ -152,8 +160,9 @@ in {
             )
           );
 
-        windowrulev2 = [
+        windowrule = [
           "suppressevent maximize, class:.*"
+          "tile, class:Brave-browser"
         ];
       };
     };

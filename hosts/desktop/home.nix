@@ -14,11 +14,11 @@
   modules = {
     fuzzel.enable = true;
     git.enable = true;
+    helix.enable = true;
     hyprland.enable = true;
     hyprpanel.enable = true;
     icons.enable = true;
     kitty.enable = true;
-    lazyvim.enable = true;
     packages.enable = true;
     themes.enable = true;
     vscode.enable = true;

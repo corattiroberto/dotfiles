@@ -18,11 +18,11 @@
     ./ags
     ./fuzzel
     ./git
+    ./helix
     ./hyprland
     ./hyprpanel
     ./icons
     ./kitty
-    ./lazyvim
     ./mithril-shell
     ./packages
     ./themes

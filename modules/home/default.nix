@@ -21,6 +21,7 @@
     ./hyprpanel
     ./icons
     ./kitty
+    ./lazyvim
     ./mithril-shell
     ./packages
     ./themes
